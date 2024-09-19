@@ -1,0 +1,25 @@
+.section-template--22795098718544__main-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+@media screen and (min-width: 750px) {
+    .section-template--22795098718544__main-padding {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+}
+
+.section-template--22795098718544__rich_text_zt4q8F-padding {
+    padding-top: 15px;
+    padding-bottom: 27px;
+}
+
+@media screen and (min-width: 750px) {
+    .section-template--22795098718544__rich_text_zt4q8F-padding {
+        padding-top: 20px;
+        padding-bottom: 36px;
+    }
+}
+
+

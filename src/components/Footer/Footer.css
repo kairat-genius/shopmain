@@ -1,0 +1,22 @@
+
+.footer {
+    margin-top: 12px;
+}
+
+.section-sections--22795099111760__footer-padding {
+    padding-top: 12px;
+padding-bottom: 27px;
+}
+
+@media screen and (min-width: 750px) {
+.footer {
+    margin-top: 16px;
+}
+
+.section-sections--22795099111760__footer-padding {
+    padding-top: 16px;
+padding-bottom: 36px;
+}
+}
+
+

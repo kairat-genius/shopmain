@@ -1,0 +1,24 @@
+@media screen and (max-width: 749px) {
+
+    #Banner-template--22795098653008__image_banner::before,
+    #Banner-template--22795098653008__image_banner .banner__media::before,
+    #Banner-template--22795098653008__image_banner:not(.banner--mobile-bottom) .banner__content::before {
+        padding-bottom: 42.18750000000001%;
+        content: '';
+        display: block;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+    #Banner-template--22795098653008__image_banner::before,
+    #Banner-template--22795098653008__image_banner .banner__media::before {
+        padding-bottom: 42.18750000000001%;
+        content: '';
+        display: block;
+    }
+}
+
+#Banner-template--22795098653008__image_banner::after {
+    opacity: 0.6;
+}

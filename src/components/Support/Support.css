@@ -1,0 +1,11 @@
+.section-template--22902994600272__rich_text_EGytXU-padding {
+    padding-top: 30px;
+    padding-bottom: 39px;
+}
+
+@media screen and (min-width: 750px) {
+    .section-template--22902994600272__rich_text_EGytXU-padding {
+        padding-top: 40px;
+        padding-bottom: 52px;
+    }
+}

@@ -1,0 +1,11 @@
+.section-template--22795098653008__collection_list_zPfgF9-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+@media screen and (min-width: 750px) {
+    .section-template--22795098653008__collection_list_zPfgF9-padding {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+}

@@ -1,0 +1,13 @@
+.section-template--22795098620240__product-grid-padding {
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+    @media screen and (min-width: 750px) {
+.section-template--22795098620240__product-grid-padding {
+        padding-top: 36px;
+    padding-bottom: 36px;
+}
+}
+
+
