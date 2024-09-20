@@ -33,7 +33,7 @@ const Profile = () => {
   const handleDownload = (productId) => {
     getProfileDownloadFile(order_id, productId)
       .then((downloadData) => {
-        const fileUrl = downloadData.fileUrl;
+        const fileUrl = downloadData.file; 
         const link = document.createElement("a");
         link.href = fileUrl;
         link.download = "";
