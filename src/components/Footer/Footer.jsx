@@ -15,7 +15,7 @@ const Footer = () => {
   const handleResetSubmit = (event) => {
     event.preventDefault();
     if (email) {
-      postSubscription({ email });
+      postSubscription(email);
     } else {
       alert("Please enter your email address.");
     }

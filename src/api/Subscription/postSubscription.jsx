@@ -6,7 +6,7 @@ let toastId = null;
 
 export const postSubscription = (email) => {
     axios.post(SUBSCRIPTION, {
-        email
+        email: email
     }, {
         headers: {
             'Authorization': `JWT ${accessToken}`,

@@ -6,15 +6,17 @@ import InputField from "../../../components/InputField/InputField";
 import { postValidResetPassword } from "../../../api/User/postValidResetPassword.jsx";
 import { postConfirmResetPassword } from "../../../api/User/postResetPasswordConfirm.jsx";
 import NotFound404 from '../../NotFound404/NotFound404.jsx';
-import { toast } from 'react-toastify'; // Import toast for notifications
+import { toast } from 'react-toastify'; 
 import "./Reset.css";
 import "./../../../css/customer.css";
+
 
 const Reset = () => {
   const { uid, token } = useParams(); 
   const [isValid, setIsValid] = useState(false); 
   const [new_password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+ 
 
   useEffect(() => {
     postValidResetPassword({ uid, token })

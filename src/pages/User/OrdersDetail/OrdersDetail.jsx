@@ -134,7 +134,7 @@ const Profile = () => {
                         <td
                           headers="Row16174488944976 ColumnSku"
                           role="cell"
-                          data-label="Артикул"
+                   
                         ></td>
                         <td
                           headers="Row16174488944976 ColumnPrice"
@@ -146,7 +146,7 @@ const Profile = () => {
                         <td
                           headers="Row16174488944976 ColumnQuantity"
                           role="cell"
-                          data-label="Количество"
+                     
                         ></td>
                         <td
                           headers="Row16174488944976 ColumnTotal"

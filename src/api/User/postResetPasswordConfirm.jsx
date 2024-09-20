@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { USER_RESET_PASSWORD_CONFIRM } from '../../Fetch/settings';
+import { useNavigate } from "react-router-dom";
 
+const navigate = useNavigate();
 export const postConfirmResetPassword = ({ uid, token, new_password }) => {
   return axios.post(USER_RESET_PASSWORD_CONFIRM, { uid, token, new_password }, {
     headers: {
@@ -10,6 +12,8 @@ export const postConfirmResetPassword = ({ uid, token, new_password }) => {
   })
   .then(response => {
     if (response.status === 200) {
+      toast.success('Ваш пароль был успешно изменён')
+      navigate('/account/login')
       return { valid: true };
     } else {
       return { valid: false };
