@@ -1,11 +1,11 @@
 import Cookies from 'js-cookie';
 
-// const API_DOMAIN = 'https://topia.pp.ua';
+const API_DOMAIN = 'https://topia.pp.ua';
 const API_PREFIX = '/api/v1/';
-// const CONCATE = API_DOMAIN + API_PREFIX;
+const CONCATE = API_DOMAIN + API_PREFIX;
 
 export const accessToken = Cookies.get('access');
-const CONCATE = API_PREFIX;
+// const CONCATE = API_PREFIX;
 // API METHODS URLS
 export const USER_REGISTER = CONCATE + 'registration/';
 export const USER_LOGIN = CONCATE + 'account/login/';
@@ -19,6 +19,9 @@ export const USER_PROFILE_LIST_ORDERS = CONCATE + 'account/list/orders/';
 export const USER_PROFILE_DETAIL_ORDER = (order_id) => CONCATE + `account/order/${order_id}`;
 export const USER_PROFILE_DOWNLOAD_FILE = (order_id, product_id) => CONCATE + `account/download/file/${order_id}/${product_id}/`
 
+// подписка
+
+export const SUBSCRIPTION = CONCATE + 'subscription/';
 
 
 export const MENEGER_ORDER_POST = CONCATE + 'account/create/manager-order/';

@@ -12,21 +12,27 @@ import "./../../../css/component-rating.css";
 import "./../../../css/component-deferred-media.css";
 import "./../../../css/component-pickup-availability.css";
 
-const ProductInfo = ({ onClick, data }) => {
+import { toast } from "react-toastify";
+import { accessToken } from "../../../Fetch/settings";
+
+const ProductInfo = ({ onClick, data, onAddToCart }) => {
   if (!data || !data.name) {
-    return <div className="loader"></div>;
+    return <div></div>;
   }
 
-  const handleAddToCart = (productId) => {
-    postCat(productId, data, (product) => {});
-  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    if (!accessToken) {
+      toast.error("Пожалуйста, авторизуйтесь, чтобы добавить товары в корзину.");
+      return; 
+  }
 
     const productId = data.id;
-    handleAddToCart(productId);
+    postCat(productId, data, onAddToCart);
   };
+
+ 
 
   return (
     <section

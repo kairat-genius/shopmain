@@ -155,7 +155,7 @@ const Cart = () => {
                               </td>
 
                               <td className="cart-item__totals right medium-hide large-up-hide">
-                                {cart.price} {cart.currency.name}
+                              {formatPrice(cart.price)} {cart.currency}
                                 <div className="loading__spinner hidden">
                                   <svg
                                     aria-hidden="true"

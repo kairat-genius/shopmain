@@ -28,7 +28,6 @@ const ProductInfo = ({dataSimilar}) => {
     >
       <div className="color-scheme-1 gradient">
         <product-recommendations
-          data-url="/recommendations/products?limit=4"
           data-section-id="template--22795098816848__related-products"
           data-product-id="9302321234256"
         >
@@ -101,7 +100,7 @@ const ProductInfo = ({dataSimilar}) => {
                                 Обычная цена
                               </span>
                               <span className="price-item price-item--regular">
-                              {formatPrice(similar.price)}
+                              {formatPrice(similar.price)} {similar.currency}
                               </span>
                             </div>
                           </div>

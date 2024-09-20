@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Header from "../../../components/Header/Header.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
 import InputField from "../../../components/InputField/InputField";
@@ -8,14 +8,17 @@ import { useNavigate } from 'react-router-dom';
 import "./../../../css/customer.css";
 import { postResetPassword } from "../../../api/User/postResetPassword.jsx";
 import { accessToken } from "../../../Fetch/settings.js";
+
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  if (accessToken) {
-    navigate("/account");
-  }
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/account");
+    }
+  }, [navigate]);
 
   const handleSubmit = (event) => {
     event.preventDefault();

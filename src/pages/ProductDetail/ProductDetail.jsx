@@ -40,11 +40,18 @@ const ProductDetail = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const [notificationItem, setNotificationItem] = useState(null);
+
+  const handleAddToCart = (product) => {
+  
+      setNotificationItem(product);
+
+  };
 
   
   return (
     <>
-      <Header />
+      <Header notificationItem={notificationItem} setNotificationItem={setNotificationItem}/>
       <main
         id="MainContent"
         className="content-for-layout focus-none"
@@ -52,7 +59,7 @@ const ProductDetail = () => {
         tabIndex="-1"
       >
         
-        <ProductInfo onClick={handleToggleModal} data={data} />
+        <ProductInfo onClick={handleToggleModal} data={data} onAddToCart={handleAddToCart}/>
         <ProductRecommendations dataSimilar={data}/>
         
 

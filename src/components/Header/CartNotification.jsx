@@ -39,7 +39,7 @@ const CartNotification = ({ cartItems, onClose, count}) => {
           aria-modal="true"
           aria-label="Товар добавлен в корзину."
           role="dialog"
-          tabindex="-1"
+          tabIndex="-1"
         >
           <div class="cart-notification__header">
             <h2 class="cart-notification__heading caption-large text-body">
@@ -52,8 +52,8 @@ const CartNotification = ({ cartItems, onClose, count}) => {
                 fill="none"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M11.35.643a.5.5 0 01.006.707l-6.77 6.886a.5.5 0 01-.719-.006L.638 4.845a.5.5 0 11.724-.69l2.872 3.011 6.41-6.517a.5.5 0 01.707-.006h-.001z"
                   fill="currentColor"
                 ></path>
@@ -100,17 +100,19 @@ const CartNotification = ({ cartItems, onClose, count}) => {
             >
               Просмотреть корзину ({count})
             </a>
-            <form action="/cart" method="post" id="cart-notification-form">
-              <button
+       
+              <a
                 class="button button--primary button--full-width"
                 name="checkout"
+                href="/checkout"
+
               >
                 Оформить заказ
-              </button>
-            </form>
-            <button type="button" class="link button-label">
+              </a>
+         
+            <a href="/collections/all" type="button" class="link button-label">
               Продолжить покупки
-            </button>
+            </a>
           </div>
         </div>
       </div>

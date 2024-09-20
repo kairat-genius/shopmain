@@ -8,12 +8,11 @@ import RichText from './components/RichText.jsx';
 
 const Home = () => {
 
-    const [cartItems, setCartItems] = useState([]);
+
     const [notificationItem, setNotificationItem] = useState(null);
 
     const handleAddToCart = (product) => {
         setNotificationItem(product);
-        setCartItems(prevCartItems => [...prevCartItems, product]);
     };
 
 

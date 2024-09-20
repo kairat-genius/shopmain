@@ -20,6 +20,9 @@ export const postLoginRequest = ({ email, password, navigate }) => {
         Cookies.set('access', access, { expires: accessExpiry });
         navigate('/account');   
         toast.success('Пользователь успешно авторизован');
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000);
 
     })
     .catch(error => {

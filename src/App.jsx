@@ -7,8 +7,7 @@ import {
 } from "react-router-dom";
 import "react-toastify/ReactToastify.css"
 
-
-import { ToastContainer, toast} from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 
 import { useURL } from "../src/hooks/useURL";
 const Home = lazy(() => import("../src/pages/Home/Home"));
@@ -42,7 +41,7 @@ const Root = () => {
   const url = useURL();
 
   return (
-    <Suspense fallback={<div className="loader"></div>}>
+    <Suspense fallback={<div></div>}>
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
@@ -78,13 +77,10 @@ const router = createBrowserRouter([
 const App = () => {
   useTokenRefresh();
   
-  const notify = () => toast.error("Wow so easy!");
   return (
     <div>
       <RouterProvider router={router} />
-      <button onClick={notify}>Notify!</button>
-    
-      <a href="/back_media/service/static/pig_in_minecraft_farm_animal_3d_hd__by_sorayascorner_dhnvk8z-fullview.webp" download="awdawd.webp">Скачать файл</a>
+     
       <ToastContainer
 
       />

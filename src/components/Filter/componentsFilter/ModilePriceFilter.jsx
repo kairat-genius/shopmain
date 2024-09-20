@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import { formatPrice } from "../../../hooks/formatPrice";
 const ModilePriceFilter = ({ maxPrice, isOpen }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,7 +33,7 @@ const ModilePriceFilter = ({ maxPrice, isOpen }) => {
     }
 
     // Обновляем URL с сохранением других параметров
-    navigate(`/collections/all?${searchParams.toString()}`);
+    navigate(`${location.pathname}?${searchParams.toString()}`);
   };
 
   const handleReset = () => {
@@ -42,7 +42,7 @@ const ModilePriceFilter = ({ maxPrice, isOpen }) => {
     searchParams.delete("price_from");
     searchParams.delete("price_to");
 
-    navigate(`/collections/all?${searchParams.toString()}`);
+    navigate(`${location.pathname}?${searchParams.toString()}`);
   };
 
   return (
@@ -82,52 +82,52 @@ const ModilePriceFilter = ({ maxPrice, isOpen }) => {
         id="FacetMobile-2-template--22795098620240__product-grid"
         className="mobile-facets__submenu gradient"
       >
-        <p className="mobile-facets__info">Максимальная цена: {maxPrice} ₽</p>
+        <p className="mobile-facets__info">
+          Максимальная цена: {formatPrice(maxPrice)} ₽
+        </p>
 
         <price-range>
           <div class="facets__price">
-          <span className="field-currency">₽</span>
+            <span className="field-currency">₽</span>
 
-          <div className="field">
-            <input
-              className="field__input"
-              name="filter.v.price.gte"
-              id="Mobile-Filter-Price-GTE"
-              value={priceGte}
-              type="text"
-              inputMode="decimal"
-              placeholder="0"
-              data-pattern="\d| |,|\."
-              onChange={handlePriceChange}
-              onBlur={updateURL}
-            />
-            <label className="field__label" htmlFor="Mobile-Filter-Price-GTE">
-              От
-            </label>
-          </div>
-          <span className="field-currency">₽</span>
-          <div className="field">
-            <input
-              className="field__input"
-              name="filter.v.price.lte"
-              id="Mobile-Filter-Price-LTE"
-              value={priceLte}
-              type="text"
-              inputMode="decimal"
-              placeholder={maxPrice}
-              data-pattern="\d| |,|\."
-              data-min="231,00"
-              data-max={maxPrice}
-              onChange={handlePriceChange}
-              onBlur={updateURL}
-            />
-            <label className="field__label" htmlFor="Mobile-Filter-Price-LTE">
-              Для
-            </label>
-          </div>
+            <div className="field">
+              <input
+                className="field__input"
+                name="price_from"
+                id="Mobile-Filter-Price-GTE"
+                value={priceGte}
+                type="text"
+                inputMode="decimal"
+                placeholder="0"
+                data-pattern="\d| |,|\."
+                onChange={handlePriceChange}
+                onBlur={updateURL}
+              />
+              <label className="field__label" htmlFor="Mobile-Filter-Price-GTE">
+                От
+              </label>
+            </div>
+            <span className="field-currency">₽</span>
+            <div className="field">
+              <input
+                className="field__input"
+                name="price_to"
+                id="Mobile-Filter-Price-LTE"
+                value={priceLte}
+                type="text"
+                inputMode="decimal"
+                placeholder="0"
+                data-pattern="\d| |,|\."
+                onChange={handlePriceChange}
+                onBlur={updateURL}
+              />
+              <label className="field__label" htmlFor="Mobile-Filter-Price-LTE">
+                Для
+              </label>
+              
+            </div>
           </div>
         </price-range>
-
       </div>
     </details>
   );

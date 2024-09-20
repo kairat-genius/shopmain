@@ -407,7 +407,7 @@ table:not([class]) td,table:not([class]) th {
   }
 }
 
-.left {
+ .left {
   text-align: left
 }
 
@@ -427,9 +427,9 @@ table:not([class]) td,table:not([class]) th {
   opacity: .7
 }
 
-a:empty,ul:empty,dl:empty,div:empty,section:empty,article:empty,p:empty,h1:empty,h2:empty,h3:empty,h4:empty,h5:empty,h6:empty {
+/* a:empty,ul:empty,dl:empty,div:empty,section:empty,article:empty,p:empty,h1:empty,h2:empty,h3:empty,h4:empty,h5:empty,h6:empty {
   display: none
-}
+} */
 
 .link,.customer a {
   cursor: pointer;
@@ -465,7 +465,7 @@ a:empty,ul:empty,dl:empty,div:empty,section:empty,article:empty,p:empty,h1:empty
 .link-with-icon .icon {
   width: 1.5rem;
   margin-left: 1rem
-}
+} 
 
 a:not([href]) {
   cursor: not-allowed

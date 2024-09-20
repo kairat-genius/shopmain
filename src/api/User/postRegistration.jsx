@@ -21,6 +21,10 @@ export const registrationRequest = ({ login, email, password, navigate }) => {
         Cookies.set('access', access, { expires: accessExpiry });
         navigate('/account');   
         toast.success('Пользователь успешно создан');
+        setTimeout(() => {
+            window.location.reload();
+        }, 2000); 
+       
     })
     .catch(error => {
         if (error.response && error.response.data) {

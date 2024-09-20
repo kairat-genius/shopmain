@@ -363,10 +363,8 @@ const Payment = () => {
                                           }}
                                         >
                                           <h2 className="n8k95w1 n8k95w0 _1fragempf n8k95w2">
-                                            Детали заказа{" "}
-                                            <span className="_19gi7yt0 _19gi7yty _19gi7ytx _1fragemrr">
-                                              (4)
-                                            </span>
+                                            Детали заказа
+                                            
                                           </h2>
                                           <div className="WPQk2">
                                             <div

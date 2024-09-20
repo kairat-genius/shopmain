@@ -23,6 +23,16 @@ const Header = ({ notificationItem, setNotificationItem }) => {
     getCartCount(setCount);
   }, []); 
 
+
+  useEffect(() => {
+    if (notificationItem) {
+
+      getCartCount(setCount);
+    }
+  }, [notificationItem]);
+
+
+
   const location = useLocation();
   const currentPath = location.pathname;
 

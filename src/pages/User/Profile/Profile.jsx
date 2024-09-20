@@ -4,18 +4,22 @@ import Footer from "../../../components/Footer/Footer.jsx";
 import Cookies from "js-cookie";
 import "./Profile.css";
 import "../../../css/customer.css";
-import { Router, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getProfileListOrders } from "../../../api/User/Profile/getProfileListOrders.jsx";
 import { formatPrice } from '../../../hooks/formatPrice.js';
+import { accessToken } from "../../../Fetch/settings.js";
 const Profile = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  const accessToken = Cookies.get("access");
+  useEffect(() => {
 
-  if (!accessToken) {
-    navigate("/account/login");
-  }
+    if (!accessToken) {
+      navigate("/account/login");
+    }
+  }, [navigate]);
+
+
   useEffect(() => {
     getProfileListOrders(setData);
   }, []);

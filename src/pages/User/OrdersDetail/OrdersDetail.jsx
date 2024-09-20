@@ -7,51 +7,48 @@ import "./OrdersDetail.css";
 import "../../../css/customer.css";
 import NotFound404 from "../../NotFound404/NotFound404.jsx";
 import { formatPrice } from "../../../hooks/formatPrice.js";
-
+import { useNavigate } from "react-router-dom";
 import { getProfileDownloadFile } from "../../../api/User/Profile/getProfileDownloadFile.jsx";
 import { accessToken } from "../../../Fetch/settings.js";
-
+import { Helmet } from "react-helmet";
 const Profile = () => {
   const { order_id } = useParams();
   const [data, setData] = useState([]);
-  const [dataDownload, setDataDownload] = useState([])
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  if (!accessToken) {
-    navigate("/account/login");
-  }
+  useEffect(() => {
+    if (!accessToken) {
+      navigate("/account/login");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     if (order_id) {
       getProfileDetailOrder(setData, order_id, setError, setProductData);
     }
   }, [order_id]);
- 
-  console.log(data)
-
 
   const handleDownload = (productId) => {
     getProfileDownloadFile(order_id, productId)
-      .then((response) => {
-        const url = window.URL.createObjectURL(new Blob([response.data]));
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', `file_${productId}.pdf`); 
+      .then((downloadData) => {
+        const fileUrl = downloadData.fileUrl;
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = "";
         document.body.appendChild(link);
         link.click();
-        link.parentNode.removeChild(link);
+        document.body.removeChild(link);
       })
       .catch((error) => {
-        console.error('Ошибка при скачивании файла:', error);
+        console.error("Ошибка при загрузке файла:", error);
       });
   };
-
 
   if (error?.response?.status === 404) {
     return <NotFound404 />;
   }
-
 
   return (
     <>
@@ -157,15 +154,15 @@ const Profile = () => {
                           data-label="Скачать файл"
                         >
                           {productData.paid ? (
-                          <a
-                            href="#"
-                            onClick={() => handleDownload(product.id)}
-                          >
-                            Скачать файл
-                          </a>
-                        ) : (
-                          <span>Файл недоступен</span>
-                        )}
+                            <a
+                              href="#"
+                              onClick={() => handleDownload(product.id)}
+                            >
+                              Скачать файл
+                            </a>
+                          ) : (
+                            <span>Файл недоступен</span>
+                          )}
                         </td>
                       </tr>
                     </tbody>

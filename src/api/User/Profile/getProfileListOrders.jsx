@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { toast } from "react-toastify";
 import {USER_PROFILE_LIST_ORDERS, accessToken} from "../../../Fetch/settings"
 
 export const getProfileListOrders= (setData) => {
@@ -12,7 +11,5 @@ export const getProfileListOrders= (setData) => {
     .then((response) => {
         setData(response.data)
     })
-    .catch(error => {
-        toast.error('Не удалось получить список заказов')
-    })
+    
 }

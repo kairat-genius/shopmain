@@ -14,6 +14,8 @@ import '../../../css/quantity-popover.css'
 import { getProductList } from '../../../api/Product/ProductList/getProductList';
 import { postCat } from "../../../api/User/Cat/postAddCart";
 import { formatPrice } from "../../../hooks/formatPrice";
+import { accessToken } from "../../../Fetch/settings";
+import { toast } from "react-toastify";
 
 const FeaturedCollection = ({onAddToCart}) => {
     
@@ -28,9 +30,12 @@ const FeaturedCollection = ({onAddToCart}) => {
     }, []);
 
     const handleAddToCart = (product) => {
-        postCat(product.id, product, onAddToCart)
+        if (!accessToken) {
+            toast.error("Пожалуйста, авторизуйтесь, чтобы добавить товары в корзину.");
+            return; 
+        }
+        postCat(product.id, product, onAddToCart);
     };
-
 
     return (
         <section id="shopify-section-template--22795098653008__featured_collection" className="shopify-section section">
@@ -43,7 +48,7 @@ const FeaturedCollection = ({onAddToCart}) => {
                     </div>
                     <slider-component className="slider-mobile-gutter page-width page-width-desktop scroll-trigger animate--slide-in">
                         <ul id="Slider-template--22795098653008__featured_collection" data-id="template--22795098653008__featured_collection" className="grid product-grid contains-card contains-card--product contains-card--standard grid--4-col-desktop grid--2-col-tablet-down" role="list" aria-label="Ползунок">
-                            {data.slice(0, 8).map((product) => (
+                            {data.slice(0, 4).map((product) => (
                             <li key={product.id} id="Slide-template--22795098653008__featured_collection-1" className="grid__item scroll-trigger animate--slide-in" data-cascade="" style={{ "--animation-order": product.index }}>
                                 <div className="card-wrapper product-card-wrapper underline-links-hover">
                                     <div className="card card--standard card--media card--shape" style={{ "--ratio-percent": "100.0%" }}>

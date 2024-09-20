@@ -32,7 +32,7 @@ const Filter = ({totalCount, maxPrice}) => {
                 Фильтр:
               </h2>
               <CategoryFilter isMobile={false} /> 
-              <PriceFilter maxPrice={maxPrice} isMobile={false} />
+              <PriceFilter maxPrice={maxPrice} />
             </div>
             <ActiveFilter FilterClass="active-facets active-facets-desktop"/>
           
