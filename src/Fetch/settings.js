@@ -20,13 +20,17 @@ export const USER_PROFILE_DETAIL_ORDER = (order_id) => CONCATE + `account/order/
 export const USER_PROFILE_DOWNLOAD_FILE = (order_id, product_id) => CONCATE + `account/download/file/${order_id}/${product_id}/`
 
 
+
 export const MENEGER_ORDER_POST = CONCATE + 'account/create/manager-order/';
 export const CHECKOUT_ORDER_GET = (order_id) => CONCATE + `account/checkout/${order_id}/`;
 
 
+// продукты
 export const PRODUCT_LIST_GET = CONCATE + 'GetProducts/';
 export const PRODUCT_DETAIL = (slug) => 
     CONCATE + `GetProductDetail/${slug}/`;
+
+export const PRODUCT_SIMILAR_POST = CONCATE + 'GetSimilarProducts/';
 
 
 // Статика

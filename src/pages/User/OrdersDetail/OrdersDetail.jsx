@@ -9,6 +9,7 @@ import NotFound404 from "../../NotFound404/NotFound404.jsx";
 import { formatPrice } from "../../../hooks/formatPrice.js";
 
 import { getProfileDownloadFile } from "../../../api/User/Profile/getProfileDownloadFile.jsx";
+import { accessToken } from "../../../Fetch/settings.js";
 
 const Profile = () => {
   const { order_id } = useParams();
@@ -16,6 +17,10 @@ const Profile = () => {
   const [dataDownload, setDataDownload] = useState([])
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
+
+  if (!accessToken) {
+    navigate("/account/login");
+  }
 
   useEffect(() => {
     if (order_id) {

@@ -7,11 +7,15 @@ import { postLoginRequest } from "../../../api/User/postLogin.jsx";
 import { useNavigate } from 'react-router-dom';
 import "./../../../css/customer.css";
 import { postResetPassword } from "../../../api/User/postResetPassword.jsx";
-
+import { accessToken } from "../../../Fetch/settings.js";
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  if (accessToken) {
+    navigate("/account");
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
