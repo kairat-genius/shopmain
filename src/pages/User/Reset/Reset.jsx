@@ -9,14 +9,14 @@ import NotFound404 from '../../NotFound404/NotFound404.jsx';
 import { toast } from 'react-toastify'; 
 import "./Reset.css";
 import "./../../../css/customer.css";
-
+import { useNavigate } from "react-router-dom";
 
 const Reset = () => {
   const { uid, token } = useParams(); 
   const [isValid, setIsValid] = useState(false); 
   const [new_password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
- 
+  const navigate = useNavigate();
 
   useEffect(() => {
     postValidResetPassword({ uid, token })
@@ -37,7 +37,7 @@ const Reset = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (new_password === passwordConfirmation) {
-      postConfirmResetPassword({ uid, token, new_password })
+      postConfirmResetPassword({ uid, token, new_password }, navigate)
     } else {
       toast.error('Passwords do not match.');
     }

@@ -1,10 +1,8 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { USER_RESET_PASSWORD_CONFIRM } from '../../Fetch/settings';
-import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
-export const postConfirmResetPassword = ({ uid, token, new_password }) => {
+export const postConfirmResetPassword = ({ uid, token, new_password }, navigate) => {
   return axios.post(USER_RESET_PASSWORD_CONFIRM, { uid, token, new_password }, {
     headers: {
       'Content-Type': 'application/json',
