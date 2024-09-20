@@ -77,10 +77,12 @@ const router = createBrowserRouter([
 
 const App = () => {
   useTokenRefresh();
-
+  
+  const notify = () => toast.error("Wow so easy!");
   return (
     <div>
       <RouterProvider router={router} />
+      <button onClick={notify}>Notify!</button>
     
       <a href="/back_media/service/static/pig_in_minecraft_farm_animal_3d_hd__by_sorayascorner_dhnvk8z-fullview.webp" download="awdawd.webp">Скачать файл</a>
       <ToastContainer

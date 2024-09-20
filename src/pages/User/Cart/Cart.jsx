@@ -10,7 +10,7 @@ import "./../../../css/component-discounts.css";
 import "./../../../css/quantity-popover.css";
 import { formatPrice } from "../../../hooks/formatPrice.js";
 import { getCat } from "../../../api/User/Cat/getCat.jsx";
-import { postDeleteCat } from "../../../api/User/Cat/POSTDeleteCat.jsx";
+import { postDeleteCat } from "../../../api/User/Cat/postDeleteCat.jsx";
 import { accessToken } from "../../../Fetch/settings.js";
 const Cart = () => {
   const [data, setData] = useState([]);
