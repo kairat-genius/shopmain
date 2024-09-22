@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { toast } from "react-toastify";
-import { SUBSCRIPTION, accessToken } from "../../Fetch/settings";
+import { SUBSCRIPTION } from "../../Fetch/settings";
 
 let toastId = null; 
 
@@ -9,7 +9,6 @@ export const postSubscription = (email) => {
         email: email
     }, {
         headers: {
-            'Authorization': `JWT ${accessToken}`,
             'Content-Type': 'application/json',
         }
     })

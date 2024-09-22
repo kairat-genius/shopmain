@@ -33,7 +33,7 @@ const ProductInfo = ({dataSimilar}) => {
         >
           <div className="related-products page-width section-template--22795098816848__related-products-padding isolate scroll-trigger animate--slide-in product-recommendations--loaded">
           <h2 className="related-products__heading inline-richtext h2">
-            You may also like
+          Вам также может понравиться
           </h2>
           <ul
             className="grid product-grid grid--4-col-desktop grid--2-col-tablet-down"

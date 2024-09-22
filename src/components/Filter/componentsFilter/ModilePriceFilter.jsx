@@ -58,7 +58,7 @@ const ModilePriceFilter = ({ maxPrice, isOpen }) => {
         aria-expanded={isOpen}
       >
         <div>
-          <span>Price</span>
+          <span>Цена</span>
           <span className="mobile-facets__arrow">
             <svg
               viewBox="0 0 14 10"

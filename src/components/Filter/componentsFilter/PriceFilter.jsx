@@ -53,7 +53,7 @@ const PriceFilter = ({ maxPrice }) => {
     >
       <summary className="facets__summary caption-large focus-offset">
         <div>
-          <span>Price</span>
+          <span>Цена</span>
           <svg
             aria-hidden="true"
             focusable="false"
